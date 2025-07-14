@@ -1,0 +1,116 @@
+**AWS Basics: A Beginner's Guide**
+
+Amazon Web Services (AWS) is a comprehensive and widely-used cloud computing platform provided by Amazon. It offers a variety of services including computing power, storage options, networking, databases, analytics, machine learning, and more.
+
+Here’s an overview of **AWS basics** to help you get started:
+
+---
+
+### 🌐 What is AWS?
+
+**AWS (Amazon Web Services)** is a secure cloud services platform that enables businesses, organizations, and developers to build applications, host websites, store data, and run IT infrastructure in the cloud.
+
+---
+
+### 🔑 Core AWS Services
+
+1. **Compute**
+   - **EC2 (Elastic Compute Cloud):** Virtual machines in the cloud.
+   - **Lambda:** Serverless compute service (run code without managing servers).
+   - **ECS / EKS:** Container management (Docker & Kubernetes).
+
+2. **Storage**
+   - **S3 (Simple Storage Service):** Object storage for files, backups, etc.
+   - **EBS (Elastic Block Store):** Block-level storage volumes for EC2.
+   - **Glacier:** Low-cost archival storage.
+
+3. **Networking**
+   - **VPC (Virtual Private Cloud):** Isolated virtual network in AWS.
+   - **Route 53:** DNS web service.
+   - **API Gateway:** Create, manage, and secure APIs.
+
+4. **Databases**
+   - **RDS (Relational Database Service):** Managed relational databases (MySQL, PostgreSQL, etc.).
+   - **DynamoDB:** Fully managed NoSQL database.
+   - **Redshift:** Data warehousing for large-scale analytics.
+
+5. **Security & Identity**
+   - **IAM (Identity and Access Management):** Control access to AWS resources.
+   - **KMS (Key Management Service):** Manage encryption keys.
+   - **CloudTrail:** Log and monitor account activity.
+
+6. **Management & Monitoring**
+   - **CloudWatch:** Monitor logs, metrics, and alarms.
+   - **CloudFormation:** Infrastructure as code using templates.
+   - **Config:** Track configuration changes of AWS resources.
+
+7. **Developer Tools**
+   - **CodeCommit:** Version control like Git.
+   - **CodeBuild / CodeDeploy / CodePipeline:** CI/CD tools for automation.
+
+8. **Machine Learning & AI**
+   - **SageMaker:** Build, train, and deploy ML models.
+   - **Rekognition:** Image and video analysis.
+   - **Polly / Lex / Transcribe:** Text-to-speech, chatbots, and voice-to-text.
+
+---
+
+### 💰 Pricing Model
+
+AWS uses a **pay-as-you-go** model:
+- You only pay for what you use.
+- No upfront costs.
+- Free Tier available for many services (ideal for beginners/testing).
+
+---
+
+### 🧭 AWS Global Infrastructure
+
+AWS has data centers around the world, grouped into:
+- **Regions:** Geographic areas (e.g., `us-east-1`, `eu-west-1`).
+- **Availability Zones (AZs):** Isolated locations within a region for redundancy.
+- **Edge Locations:** Points of presence used by AWS CDN (CloudFront).
+
+---
+
+### 🔒 Security in AWS
+
+- **Shared Responsibility Model:**
+  - **AWS** secures the infrastructure (hardware, software, facilities).
+  - **You** secure your data, applications, and configurations.
+
+- Best practices include:
+  - Use IAM roles and policies.
+  - Enable Multi-Factor Authentication (MFA).
+  - Encrypt sensitive data at rest and in transit.
+  - Regularly audit with AWS Config and CloudTrail.
+
+---
+
+### 🛠️ Getting Started with AWS
+
+1. **Create an AWS Account**  
+   [https://aws.amazon.com](https://aws.amazon.com)
+
+2. **Explore the AWS Console**  
+   The web-based UI to manage AWS services.
+
+3. **Use AWS Free Tier**  
+   Many services offer free usage up to certain limits for 12 months.
+
+4. **Learn via AWS Training & Certification**  
+   [https://aws.amazon.com/training](https://aws.amazon.com/training)
+
+5. **Try Hands-on Labs**  
+   Platforms like **Qwiklabs**, **A Cloud Guru**, or **Coursera** provide interactive labs.
+
+---
+
+### 📚 Useful Resources
+
+- **AWS Documentation**: [https://docs.aws.amazon.com](https://docs.aws.amazon.com)
+- **AWS Whitepapers**: [https://aws.amazon.com/documentation/whitepapers](https://aws.amazon.com/documentation/whitepapers)
+- **AWS Well-Architected Framework**: Best practices for designing cloud systems.
+- **AWS CLI (Command Line Interface)**: Powerful tool for managing AWS from terminal.
+
+---
