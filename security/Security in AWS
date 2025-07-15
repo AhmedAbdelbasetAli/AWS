@@ -1,0 +1,133 @@
+# Security in AWS
+
+Amazon Web Services (AWS) provides a wide range of tools and features to help you secure your cloud environment. Security in AWS follows the **shared responsibility model**, where AWS is responsible for security *of* the cloud, and you are responsible for security *in* the cloud.
+
+---
+
+## 🔐 Shared Responsibility Model
+
+| Responsibility | AWS | Customer |
+|----------------|-----|----------|
+| Infrastructure security | ✅ Compute, Storage, Networking | ❌ |
+| Identity and Access Management (IAM) | ❌ | ✅ |
+| Guest Operating Systems | ❌ | ✅ |
+| Applications running on AWS | ❌ | ✅ |
+| Data encryption (at rest & in transit) | ❌ (but offers services) | ✅ |
+| Firewall configuration | ❌ (but offers tools like Security Groups, NACLs) | ✅ |
+
+---
+
+## 🛡️ Key AWS Security Services
+
+### 1. **IAM (Identity and Access Management)**
+- Manages users, groups, roles, and permissions.
+- Enforces least privilege access.
+- Supports multi-factor authentication (MFA).
+
+**Best Practices:**
+- Never use root account for daily tasks.
+- Rotate credentials regularly.
+- Use IAM roles for EC2 instead of long-term keys.
+
+---
+
+### 2. **Amazon GuardDuty**
+- Threat detection service that monitors for malicious activity.
+- Analyzes VPC flow logs, AWS CloudTrail event logs, and DNS logs.
+
+---
+
+### 3. **AWS WAF & Shield**
+- **WAF**: Web Application Firewall to protect against web exploits (e.g., SQL injection, XSS).
+- **Shield**: Protects against DDoS attacks (Standard is free; Advanced requires subscription).
+
+---
+
+### 4. **AWS Config**
+- Tracks configuration changes over time.
+- Helps ensure compliance with internal policies and regulatory standards.
+
+---
+
+### 5. **Amazon Inspector**
+- Automatically assesses applications for exposure, vulnerabilities, and deviations from best practices.
+
+---
+
+### 6. **AWS KMS (Key Management Service)**
+- Centralized service for creating and managing cryptographic keys.
+- Integrates with many AWS services for encryption at rest and in transit.
+
+---
+
+### 7. **AWS Secrets Manager & Parameter Store (SSM)**
+- Manage secrets like database passwords, API keys securely.
+- Secrets Manager automatically rotates secrets.
+
+---
+
+### 8. **CloudTrail**
+- Logs all API calls made in your AWS account.
+- Enables governance, compliance, and operational auditing.
+
+---
+
+### 9. **VPC (Virtual Private Cloud) Security**
+- **Security Groups**: Act as virtual firewalls for EC2 instances.
+- **Network ACLs**: Stateless firewall rules at the subnet level.
+- **Private Subnets**: For sensitive resources not exposed to the internet.
+- **VPC Endpoints**: Privately connect to AWS services without going over the public internet.
+
+---
+
+### 10. **AWS Certificate Manager (ACM)**
+- Provision, manage, and deploy SSL/TLS certificates for use with AWS services.
+
+---
+
+### 11. **AWS Macie**
+- Uses machine learning to discover, classify, and protect sensitive data (like PII) in S3.
+
+---
+
+### 12. **AWS Audit Manager**
+- Helps continuously assess compliance with regulations and industry standards (e.g., ISO 27001, SOC2, HIPAA).
+
+---
+
+## 🔒 Security Best Practices in AWS
+
+1. **Enable Multi-Factor Authentication (MFA)** for all IAM users, especially the root account.
+2. **Use IAM Roles** instead of long-term credentials for EC2, Lambda, etc.
+3. **Encrypt all sensitive data** using AWS KMS or other encryption mechanisms.
+4. **Monitor activity** using CloudTrail, GuardDuty, and Config.
+5. **Limit public access** to resources like S3 buckets, RDS, and EC2.
+6. **Regularly rotate credentials** and remove unused access keys.
+7. **Implement network segmentation** using VPCs and subnets.
+8. **Automate compliance checks** using AWS Config and Audit Manager.
+9. **Set up alarms** using CloudWatch for suspicious behavior.
+10. **Follow the principle of least privilege** in IAM policies.
+
+---
+
+## 📊 Compliance & Certifications
+
+AWS complies with global standards such as:
+- ISO/IEC 27001
+- SOC 1, SOC 2, SOC 3
+- GDPR
+- HIPAA
+- PCI DSS Level 1
+- NIST
+- CSA STAR
+
+---
+
+## 🧪 Tools for Testing and Monitoring
+
+- **AWS Trusted Advisor**: Provides real-time guidance on best practices.
+- **AWS Security Hub**: Centralizes security alerts and compliance status.
+- **Amazon Detective**: Helps analyze security issues by visualizing data.
+- **AWS Artifact**: On-demand access to AWS compliance reports.
+
+---
