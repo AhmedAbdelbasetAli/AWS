@@ -1,0 +1,123 @@
+# AWS Storage Services Overview 🗃️
+
+AWS provides a variety of storage services tailored for different use cases — from object storage to block storage and file systems. Understanding which service to use for which scenario is key to building efficient and scalable cloud architectures.
+
+---
+
+## 📦 1. Amazon S3 – Simple Storage Service
+
+**Use Case:** Store and retrieve any amount of data from anywhere.
+
+### Key Features:
+- Object storage (files with metadata)
+- Durable, scalable, and secure
+- Versioning, lifecycle policies, and encryption
+- Hosting static websites
+
+### Common Uses:
+- Backup and archive
+- Big data analytics
+- Static assets (images, videos, documents)
+
+### Storage Classes:
+| Class | Use Case |
+|-------|----------|
+| S3 Standard | Frequently accessed data |
+| S3 Standard-IA | Infrequent access |
+| S3 Glacier | Long-term archival |
+
+---
+
+## 💾 2. Amazon EBS – Elastic Block Store
+
+**Use Case:** Block-level storage for EC2 instances (like a hard drive).
+
+### Key Features:
+- Attached to a single EC2 instance
+- Persistent storage (not lost when instance stops)
+- High performance for databases and applications
+
+### Volume Types:
+| Type | Use Case |
+|------|----------|
+| General Purpose SSD (gp2/gp3) | General workloads |
+| Provisioned IOPS SSD (io1/io2) | High-performance databases |
+| Throughput Optimized HDD (st1) | Big data, log processing |
+| Cold HDD (sc1) | Infrequent access |
+
+---
+
+## 🌐 3. Amazon EFS – Elastic File System
+
+**Use Case:** Shared file storage for multiple EC2 instances.
+
+### Key Features:
+- File-level storage (like a shared network drive)
+- Fully managed
+- Can be accessed by thousands of EC2 instances simultaneously
+- Auto scales as data grows
+
+### Common Uses:
+- Content management systems
+- Dev environments
+- Big data workloads
+
+---
+
+## 🧊 4. Amazon Glacier
+
+**Use Case:** Secure, durable, low-cost storage for data archiving.
+
+### Key Features:
+- Designed for data that is rarely accessed
+- Retrieval times range from minutes to hours
+- Ideal for compliance and long-term backup
+
+---
+
+## 🖥️ 5. Instance Store
+
+**Use Case:** Temporary block storage for EC2 instances.
+
+### Key Features:
+- Physically attached to the host machine
+- Very high I/O performance
+- **Not persistent** – data is lost when instance stops or fails
+
+### Best For:
+- Caching
+- Temporary storage
+- Performance-sensitive applications
+
+---
+
+## 📁 6. AWS Backup
+
+**Use Case:** Centralized backup service for AWS resources.
+
+### Key Features:
+- Automate backups across services (EBS, RDS, EFS, DynamoDB)
+- Set backup policies and retention rules
+- Monitor and audit backups
+
+---
+
+## 🔄 Choosing the Right Storage Service
+
+| Need | Recommended Service |
+|------|---------------------|
+| Store images, videos, backups | **Amazon S3** |
+| Persistent disk for a database | **Amazon EBS** |
+| Shared file system between servers | **Amazon EFS** |
+| Long-term archive | **Amazon Glacier** |
+| Temporary, fast storage | **Instance Store** |
+| Automate backups | **AWS Backup** |
+
+---
+
+## 📚 Resources
+
+- [AWS Storage Services](https://aws.amazon.com/products/storage/ )
+- [Amazon S3 Documentation](https://docs.aws.amazon.com/s3/ )
+- [Amazon EBS Documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-  volumes.html)
+- [Amazon EFS Documentation](https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html )
