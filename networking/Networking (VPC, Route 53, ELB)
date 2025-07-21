@@ -1,0 +1,134 @@
+# AWS Networking Services Overview 🌐
+
+Networking is a core part of any cloud infrastructure. AWS provides a variety of services to manage **connectivity**, **routing**, **load balancing**, and **security** in the cloud. Understanding these services is essential for building scalable and secure cloud applications.
+
+---
+
+## 🏙️ 1. Amazon VPC – Virtual Private Cloud
+
+**Use Case:** Launch AWS resources in a virtual network that you define.
+
+### Key Features:
+- Define your own IP address range
+- Create subnets, route tables, and network gateways
+- Control access with Security Groups and Network ACLs
+- Private and public subnets
+- Peering connections between VPCs
+
+### Best For:
+- Isolating environments (dev, staging, production)
+- Hosting secure applications
+- Multi-tier architectures (web, app, DB layers)
+
+---
+
+## 🧭 2. Route Tables & Subnets
+
+**Subnets** are segments of your VPC that you can define as:
+- **Public Subnet**: Accessible from the internet
+- **Private Subnet**: Only accessible internally
+
+**Route Tables** control where network traffic is directed:
+- Internet Gateway (IGW): Route to the internet
+- NAT Gateway: Allow outbound internet access for private instances
+- VPC Peering: Connect two VPCs
+
+---
+
+## 🔐 3. Internet Gateway (IGW), NAT Gateway, and NAT Instances
+
+| Component | Purpose |
+|----------|---------|
+| **Internet Gateway (IGW)** | Allows communication between VPC and the internet |
+| **NAT Gateway** | Allows instances in a private subnet to access the internet (but not vice versa) |
+| **NAT Instance** | Older version of NAT Gateway (less scalable, more manual) |
+
+---
+
+## 🌐 4. VPC Peering
+
+**Use Case:** Connect two VPCs privately.
+
+### Key Features:
+- No data transfer cost between VPCs
+- Not transitive (A ↔ B ↔ C doesn’t imply A ↔ C)
+- Can be within the same region or across regions
+
+---
+
+## 🚦 5. Elastic Load Balancing (ELB)
+
+**Use Case:** Automatically distribute incoming traffic across multiple targets (EC2 instances, containers, IPs).
+
+### Types:
+| Type | Use Case |
+|------|----------|
+| **Application Load Balancer (ALB)** | HTTP/HTTPS traffic, advanced routing |
+| **Network Load Balancer (NLB)** | TCP/UDP traffic, high performance |
+| **Classic Load Balancer (CLB)** | Older generation, not recommended for new projects |
+
+### Key Features:
+- Health checks
+- Sticky sessions
+- Integration with Auto Scaling
+
+---
+
+## 🌍 6. Amazon Route 53
+
+**Use Case:** Highly available and scalable DNS service.
+
+### Key Features:
+- Domain registration
+- DNS routing (A, AAAA, CNAME, ALIAS)
+- Health checks
+- Traffic flow (routing policies like latency-based, failover, weighted routing)
+
+### Common Uses:
+- Host DNS for your domains
+- Route traffic to AWS or non-AWS resources
+- Failover routing for high availability
+
+---
+
+## 🔐 7. Security in Networking
+
+### 🔒 Security Groups
+- Act as a **firewall for instances**
+- Stateful: return traffic is automatically allowed
+- Allow/deny specific ports and protocols
+
+### 🛡️ Network ACLs (NACLs)
+- Act as a **firewall for subnets**
+- Stateless: return traffic must be explicitly allowed
+- Can allow or deny traffic based on rules
+
+---
+
+## 🔄 Choosing the Right Networking Service
+
+| Need | Recommended Service |
+|------|---------------------|
+| Launch resources in a custom network | **Amazon VPC** |
+| Route traffic inside VPC | **Route Tables** |
+| Connect VPCs | **VPC Peering** |
+| Distribute traffic across servers | **Elastic Load Balancer** |
+| Manage DNS | **Amazon Route 53** |
+| Secure traffic | **Security Groups & NACLs** |
+
+---
+
+## 📦 Tools and Services
+
+- **AWS Transit Gateway**: Simplify VPC networking
+- **AWS PrivateLink**: Securely access services without exposing data to the public internet
+- **AWS Direct Connect**: Establish a private connection from on-premises to AWS
+
+---
+
+## 📚 Resources
+
+- [AWS VPC Documentation](https://docs.aws.amazon.com/vpc/ )
+- [Elastic Load Balancing Docs](https://docs.aws.amazon.com/elasticloadbalancing/ )
+- [Amazon Route 53 Documentation](https://docs.aws.amazon.com/route53/ )
+- [AWS Networking Blog](https://aws.amazon.com/blogs/networking-and-content-delivery/ )
